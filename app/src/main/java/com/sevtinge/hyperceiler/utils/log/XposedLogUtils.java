@@ -1,22 +1,14 @@
 package com.sevtinge.hyperceiler.utils.log;
 
-import static com.sevtinge.hyperceiler.utils.BuildUtils.getBuildType;
 import static com.sevtinge.hyperceiler.utils.log.LogManager.logLevel;
 
 import com.sevtinge.hyperceiler.XposedInit;
 import com.sevtinge.hyperceiler.utils.PrefsMap;
 
 import de.robv.android.xposed.XposedBridge;
-import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
 
 public class XposedLogUtils {
-
-    public XC_LoadPackage.LoadPackageParam mLoadPackageParam = null;
-
-    public void init(XC_LoadPackage.LoadPackageParam lpparam) {
-        mLoadPackageParam = lpparam;
-    }
 
     public static final PrefsMap<String, Object> mPrefsMap = XposedInit.mPrefsMap;
 
@@ -25,9 +17,9 @@ public class XposedLogUtils {
         XposedBridge.log("[HyperCeiler][I]: " + msg);
     }
 
-    public static void logI(String tag, String msg) {
+    public static void logI(String tagOpkg, String msg) {
         if (logLevel < 3) return;
-        XposedBridge.log("[HyperCeiler][I][" + tag + "]: " + msg);
+        XposedBridge.log("[HyperCeiler][I][" + tagOpkg + "]: " + msg);
     }
 
     public static void logI(String tag, String pkg, String msg) {

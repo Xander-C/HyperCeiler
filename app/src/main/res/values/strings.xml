@@ -113,6 +113,7 @@
     <string name="rest_permission">Now you have to manually enable permissions for this option.</string>
     <string name="disable_detailed_log">Disable detailed log</string>
     <string name="disable_detailed_log_desc">Reboot to apply</string>
+    <string name="disable_detailed_log_more">The Debug Canary version does not support adjusting the log level</string>
     <string name="settings_safe_mode">Safe mode</string>
     <string name="settings_safe_mode_desc">Stop module function</string>
     <string name="about_developer_title">Developer</string>
@@ -136,6 +137,7 @@
     <string name="root">Some features are not available without Root/Su permission</string>
     <string name="hook_failed">The module is not activated yet.\nPlease check whether the Xposed manager is enabled. If so, please restart or re-optimize the module.</string>
     <string name="kill_failed">Failed to end process, please check if HyperCeiler has been granted Root/Su permissions?</string>
+    <string name="start_failed">Failed to start activity, please check if HyperCeiler has been granted Root/Su permissions?</string>
     <string name="pid_failed">The target application is not running and does not need to be restarted.</string>
     <string name="reboot_failed">Reboot failed, please check if HyperCeiler is granted Root/Su permission?</string>
     <string name="expand_button_title">High level</string>
@@ -349,6 +351,7 @@
     <string name="phone_n28_desc">Support n28 Band (NR)</string>
     <string name="phone_n5_n8">n5/n8 Band</string>
     <string name="phone_n5_n8_desc">Enter *#*#65686633#*#* on the dial interface to Support n5/n8 Band. If it shows \"enable N5 and N8 Mode\", the feature will enable successfully.</string>
+    <string name="phone_additional_network_settings">Additional Network Settings</string>
 
     <string name="system_framework_screen_title">Display &amp; Notifications</string>
     <string name="system_framework_core_title">Core underneath</string>
@@ -411,6 +414,8 @@
     <string name="browser_debug_mode">Unlock developer options</string>
     <string name="browser_debug_mode_desc">17.5.xxxxx and above are no entry</string>
     <string name="browser_disable_blacklist">Disable URL Blacklist</string>
+    <string name="browser_enable_debug_environment">Enable debug environment</string>
+    <string name="browser_enable_debug_environment_desc">This may result in some functions being disabled</string>
     <!--Camera-->
     <string name="camera">Camera</string>
     <string name="camera_custom_watermark">Custom device watermark</string>
@@ -518,6 +523,8 @@
     <string name="system_ui_lock_screen_unlock_tip_title">Hide the unlock prompt at the bottom of the screen</string>
     <string name="system_ui_lock_screen_hide_status_bar">Remove status bar from lock screen</string>
     <string name="system_ui_lock_screen_block_editor_title">Disable long press to access lock screen editing</string>
+    <string name="system_ui_lock_screen_allow_third_face">Allows the system to be woken up to verify recognition on a third-party lock screen</string>
+    <string name="system_ui_lock_screen_allow_third_face_desc">Allows face and fingerprint recognition to be used normally on the lock screen displayed by third-party apps</string>
     <string name="system_ui_navigation_title">Navigation</string>
     <string name="system_ui_navigation_handle_title">Handle line</string>
     <string name="system_ui_hide_navigation_bar">Hide Navigation Bar</string>
@@ -649,6 +656,8 @@
     <string name="system_ui_statusbar_clock_size">Clock size</string>
     <string name="system_ui_statusbar_clock_double_size">Double row clock size</string>
     <string name="system_ui_statusbar_clock_double_spacing_desc">Valid only when displayed in two rows</string>
+    <string name="system_ui_statusbar_clock_fix_color">Fix color</string>
+    <string name="system_ui_statusbar_clock_fix_color_desc">Experimental features</string>
     <string name="system_ui_disable_clock_anim">Disable the slide clock transition animation in Notification Center</string>
     <string name="system_ui_statusbar_indicator_battery_title">Power related</string>
     <string name="system_ui_statusbar_indicator_temperature_title">Temperature related</string>
@@ -697,6 +706,7 @@
     <string name="quick_settings_state_change_message_off_my">%1$s is off</string>
     <string name="system_control_center_5g_tile">5G network switch</string>
     <string name="system_control_center_5g_toggle_label">5G Network</string>
+    <string name="system_control_center_reduce_bright_colors_tile">Extremely dark</string>
     <string name="system_control_center_taplus_label">Taplus switches</string>
     <string name="system_control_center_sunshine_mode">Sunshine Mode</string>
     <string name="system_ui_control_auto_close">Magnetic tiles automatically retract</string>
@@ -714,7 +724,7 @@
     <string name="system_ui_control_center_control_detail_background_alpha">Control Detail Background blur value</string>
     <string name="system_ui_control_center_notification_blur_model">Notification Blur Model</string>
     <string name="system_ui_control_center_notification_blur_fix">Notification optimization</string>
-    <string name="system_ui_control_center_notification_blur_fix_desc">Experimental function, only available for Android 13 and above models. After enabling, notification blur in some areas will be optimized\nThere may be a problem of system interface crash on some models.</string>
+    <string name="system_ui_control_center_notification_blur_fix_desc">Experimental function, only available for Android 13 and above models. After enabling, notification blur in some areas will be optimized\nThere may be a problem of System UI crash on some models.</string>
     <string name="system_ui_control_center_blur_radius">Blur Radius</string>
     <string name="system_ui_control_center_blur_radius_desc">Without dropdown notification</string>
     <string name="system_ui_control_center_corner_radius">Corner Radius</string>
@@ -725,13 +735,14 @@
     <string name="system_ui_control_center_compact_notice">Compact notifications</string>
     <string name="system_ui_control_center_compact_notice_desc">Reduce notifications\' vertical paddings</string>
     <string name="system_ui_control_center_redirect_notice">Redirect notification settings</string>
-    <string name="system_ui_control_center_redirect_notice_desc">Opening the notification menu\'s settings navigates to the target channel settings instead of applying the notification settings</string>
+    <string name="system_ui_control_center_redirect_notice_desc">Opening the settings of the notification menu redirects you to the target app\'s notification channel settings instead of applying the notification settings</string>
     <string name="system_ui_control_center_show_weather">Show weather</string>
     <string name="system_ui_control_center_show_weather_city">Show city</string>
     <string name="system_ui_control_center_mute_visible_notice">Mute when screen is on</string>
     <string name="system_ui_control_center_expand_notification">Expand Notifications</string>
     <string name="system_ui_control_center_mute_visible_notice_desc">When the screen is turned on, the pop-up notification does not play the prompt sound</string>
     <string name="system_ui_control_center_rounded_rect">Rounded rectangle tile</string>
+    <string name="system_ui_control_center_statusbar_blur">Force background blur</string>
     <string name="system_ui_control_center_rounded_rect_radius">Rounded Radius</string>
     <string name="system_ui_control_center_fix_tiles_list">Disable hide extremely dark tiles</string>
     <string name="system_ui_control_center_switch_cc_and_notification_title">Switch control center and notification drawer</string>
@@ -757,6 +768,8 @@
     <string name="system_ui_control_center_more_card_tiles_less">None</string>
     <string name="system_ui_control_center_more_card_tiles_more">More</string>
     <string name="system_ui_control_center_more_card_tiles_most">Most</string>
+    <string name="system_ui_control_center_unlock_blur_supported">Remove the notification blur restriction</string>
+    <string name="system_ui_control_center_unlock_blur_supported_desc">There is no restriction on background blur for official premium materials only for third-party theme removal</string>
 
     <string name="system_ui_other_title">Other</string>
     <string name="system_ui_charge_animation_title">Charge animation</string>
@@ -766,7 +779,7 @@
     <string name="system_ui_another_title">Other</string>
     <string name="system_ui_disable_bluetooth_restrict">Prevent bluetooth from being turned off temporarily</string>
     <string name="system_ui_disable_miui_multi_win_switch">Hide the Convenience Window button</string>
-    <string name="system_ui_disable_miui_multi_win_switch_desc">Hide the convenient window button centered at the top of the HyperOS for Pad landscape screen</string>
+    <string name="system_ui_disable_miui_multi_win_switch_desc">Hide the convenient window button centered at the top of the app windows in HyperOS</string>
     <string name="system_ui_others_pct_title">Data display</string>
     <string name="system_showpct_title">Displays the brightness percentage</string>
     <string name="system_cc_volume_showpct_title">Displays the percentage of sound</string>
@@ -799,6 +812,15 @@
     <string name="system_settings_enable_fold_area">Unlock Fold area</string>
     <string name="system_settings_enable_area_desc">Unsupported devices will cause the settings to crash after being unlocked</string>
     <string name="system_settings_unlock_google_header">Unlock Google Entry</string>
+    <string name="system_settings_usb_mode">There is no pop-up window when connecting to USB</string>
+    <string name="system_settings_usb_mode_choose">USB Default option</string>
+    <string name="system_settings_usb_default">default</string>
+    <string name="system_usb_use_charging_only">Charging Only</string>
+    <string name="system_usb_use_file_transfers">File Transfers</string>
+    <string name="system_usb_use_photo_transfers">Photo Transfers</string>
+    <string name="system_usb_use_MIDI">MIDI Mode</string>
+    <string name="system_usb_reverse_charge">Reverse Charge</string>
+    <string name="system_usb_tethering">USB Tethering</string>
     <string name="system_settings_connection_sharing_title">Network Connection &amp; sharing</string>
     <string name="system_settings_new_nfc_page">New NFC Page</string>
     <string name="system_settings_new_nfc_page_desc">After opening, the default payment application for unsupported models cannot select Xiaomi Wallet</string>
@@ -806,7 +828,7 @@
     <string name="system_settings_lab_title">Featured functions</string>
     <string name="system_settings_area_screenshot">Unlock area screenshot</string>
     <string name="system_settings_voip_assistant_controller">VoIP assistant</string>
-    <string name="system_settings_ai_image_title">Ai Image Engine</string>
+    <string name="system_settings_display_and_lockscreen_title">Display &amp; Lock screen</string>
     <string name="system_settings_ai_image_unlock_sr">Unlock Super resolution</string>
     <string name="system_settings_ai_image_unlock_ai">Unlock AI image enhancement and AI HDR enhancement</string>
     <string name="system_settings_ai_image_unlock_memc">Unlock MEMC</string>
@@ -825,6 +847,7 @@
     <string name="system_settings_window_animation_scale">Window Animation Zoom</string>
     <string name="system_settings_transition_animation_scale">Transition Animation Scaling</string>
     <string name="system_settings_animator_duration_scale">Animator duration scaling</string>
+    <string name="system_settings_allow_never_lock_screen">Allow never lock screen</string>
     <!--Themes-->
     <string name="theme_manager">Themes</string>
     <string name="theme_manager_version_code_modify">Disable MIUI version detection</string>
@@ -900,6 +923,8 @@
     <string name="gallery_enable_video_post">Unlock Video effects</string>
     <string name="gallery_enable_video_editor">Unlock Video editor</string>
     <string name="gallery_enable_text_yanhua">Unlock Text fireworks</string>
+    <string name="gallery_enable_un_privacy_watermark">Remove the privacy watermark word limit</string>
+    <string name="gallery_enable_un_privacy_watermark_more">Enabling it will slightly increase the watermark density to accommodate longer word counts</string>
     <string name="gallery_enable_remover_2">Unlock Erase</string>
     <string name="gallery_enable_magic_matting">Unlock Cut</string>
     <string name="gallery_enable_magic_sky">Unlock Sky</string>
@@ -1093,7 +1118,6 @@
     <string name="home_dock_margin_bottom">Margin of page indicator from bottom of screen</string>
     <string name="home_dock_unlock_hotseat">Remove icon number restriction from dock</string>
     <string name="home_dock_fold">Fold\'s Dock</string>
-    <string name="home_dock_hide_seekpoint">Hide seekpoint</string>
     <string name="home_dock_icon_title">Show icon title in dock</string>
     <string name="home_dock_disable_recents_icon">Hide recent app icons from the Dock</string>
     <string name="home_dock_add_blur">Custom background blur</string>
@@ -1121,6 +1145,14 @@
     <string name="home_large_icon_corner_radius">Large icons with rounded corners</string>
     <string name="home_other_app_icon_hide">Desktop shortcut management</string>
     <string name="home_other_toast_slide_again">Prohibit prompts \"please stroke again\" Toast</string>
+    <string name="home_other_lock_app">Fixed applications</string>
+    <string name="home_other_lock_app_will_lock">Will lock App</string>
+    <string name="home_other_lock_app_lock">Lock App</string>
+    <string name="home_other_lock_app_unlock">Unlock App</string>
+    <string name="home_other_lock_app_will_unlock">Will Unlock App</string>
+    <string name="home_other_lock_app_r">Restore</string>
+    <string name="home_other_lock_app_e">Please unlock it in the locked app interface</string>
+    <string name="home_other_lock_app_more">You can get in and out of this mode by long-pressing on the very bottom of the screen. The device needs to be restarted for the first time.</string>
     <string name="home_other_shortcut_remove_restrictions">Remove restrictions on shortcuts</string>
     <string name="home_other_fix_android_r_s">Fix a compatibility issue that caused the desktop to go black</string>
     <string name="home_other_shortcut_background_blur_custom">Shortcut menu blur value</string>
@@ -1207,7 +1239,7 @@
     <string name="screenshot_unlock_privacy_marking_desc">A higher version of the \"Mi AI Engine\" APP needs to be pre-installed for normal use</string>
     <string name="screenshot_save_to_pictures_desc">Canonical screenshot save location to /Pictures/Screenshots</string>
     <string name="screenshot_device_customize_title">Custom screenshot model with shell</string>
-    <string name="screenshot_device_customize_desc">Please enter the model code</string>
+    <string name="screenshot_device_customize_desc">Please enter the device code, and the colored device should be filled with a suffix, for example:\n- Xiaomi 13, fill in the content is fuxi\n- Xiaomi 14 pink version, fill in the content is houji_PK</string>
     <!--Security/Tablet security center-->
     <string name="security_center">Security</string>
     <string name="security_center_pad">Tablet security center</string>
@@ -1224,6 +1256,7 @@
     <string name="security_center_blur_location">Lower positioning accuracy</string>
     <string name="security_center_gms_open">GMS Service</string>
     <string name="security_center_taplus">Taplus switches</string>
+    <string name="security_center_reduce_bright_colors_tile">Very dark tile icon replacement</string>
     <string name="security_center_flash_light">Flashlight brightness control</string>
     <string name="security_center_flash_light_more">Allowing you to control the flashlight\'s brightness by dragging the brightness slider</string>
     <string name="security_center_get_number">Manage the application to obtain the mobile phone number and log in with one click</string>
@@ -1234,6 +1267,7 @@
     <string name="security_center_beauty_privacy">Unlock Privacy camera</string>
     <string name="security_center_beauty_pc">Unlock Keep faces centered</string>
     <string name="security_center_disable_root_check">Disable root detection</string>
+    <string name="security_center_install_intercept">Disable USB installation interception</string>
     <string name="security_center_remove_macro_black_list">Remove auto combo blacklist</string>
     <string name="security_center_disable_send_malicious_app_notification">Disable \"Malicious app found\" notifications</string>
     <string name="security_center_newbox_custom_enable">Enable custom</string>

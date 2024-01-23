@@ -77,6 +77,7 @@
     <string name="rest_permission">Bây giờ bạn có thể tùy chỉnh bật quyền cho cài đặt này.</string>
     <string name="disable_detailed_log">Vô hiệu hóa nhật ký chi tiết</string>
     <string name="disable_detailed_log_desc">Khởi động lại để áp dụng</string>
+    <string name="disable_detailed_log_more">Phiên bản Debug Canary không hỗ trợ điều chỉnh mức độ nhật ký</string>
     <string name="settings_safe_mode">Chế độ an toàn</string>
     <string name="settings_safe_mode_desc">Dừng chức năng module</string>
     <string name="about_developer_title">Nhà phát triển</string>
@@ -99,6 +100,7 @@
     <string name="root">Một số tính năng không khả dụng nếu không được cấp quyền Root/Su</string>
     <string name="hook_failed">Mô-đun này chưa được kích hoạt.\nVui lòng kiểm tra xem trình quản lý Xpose có được bật hay không. Nếu vậy, vui lòng khởi động lại hoặc tối ưu hóa lại mô-đun.</string>
     <string name="kill_failed">Không thể kết thúc quá trình, kiểm tra HyperCeiler đã được cấp quyền Root?</string>
+    <string name="start_failed">Không thể bắt đầu hoạt động, vui lòng kiểm tra xem HyperCeiler đã được cấp quyền Root/Su chưa?</string>
     <string name="pid_failed">Ứng dụng đích không chạy và không cần khởi động lại.</string>
     <string name="reboot_failed">Reboot không thành công, kiểm tra HyperCeiler đã được cấp quyền Root?</string>
     <string name="expand_button_title">Cấp độ cao</string>
@@ -313,6 +315,7 @@ Chức năng này là chức năng thử nghiệm có độ ổn định cao</st
     <string name="phone_n28_desc">Hỗ trợ băng tần n28 (NR)</string>
     <string name="phone_n5_n8">Băng tần n5/n8</string>
     <string name="phone_n5_n8_desc">Nhập *#*#65686633#*#* trên giao diện quay số để bật băng tần n5/n8. Nếu hiển thị Đã bật chế độ N5 và N8 nghĩa là đã bật thành công.</string>
+    <string name="phone_additional_network_settings">Cài đặt mạng bổ sung</string>
     <string name="system_framework_screen_title">Hiển thị &amp; thông báo</string>
     <string name="system_framework_core_title">Lõi bên dưới</string>
     <string name="system_framework_hook_entry">Mở khóa giới hạn sạc thông minh</string>
@@ -375,6 +378,8 @@ Chức năng này là chức năng thử nghiệm có độ ổn định cao</st
     <string name="browser_debug_mode">Tùy chọn nhà phát triển</string>
     <string name="browser_debug_mode_desc">17.5.xxxxx trở lên không được hỗ trợ</string>
     <string name="browser_disable_blacklist">Tắt URL danh sách đen</string>
+    <string name="browser_enable_debug_environment">Bật môi trường gỡ lỗi</string>
+    <string name="browser_enable_debug_environment_desc">Điều này có thể dẫn đến một số chức năng bị vô hiệu hóa</string>
     <!--Camera-->
     <string name="camera">Máy ảnh</string>
     <string name="camera_custom_watermark">Tùy chỉnh hình mờ thiết bị</string>
@@ -613,6 +618,8 @@ Chức năng này là chức năng thử nghiệm có độ ổn định cao</st
     <string name="system_ui_statusbar_clock_size">Kích thước đồng hồ (0 là giá trị gốc)</string>
     <string name="system_ui_statusbar_clock_double_size">Kích thước hàng đôi (0 là giá trị gốc)</string>
     <string name="system_ui_statusbar_clock_double_spacing_desc">Chỉ hợp lệ khi hiển thị ở hai hàng</string>
+    <string name="system_ui_statusbar_clock_fix_color">Cố định màu</string>
+    <string name="system_ui_statusbar_clock_fix_color_desc">Tính năng thử nghiệm</string>
     <string name="system_ui_disable_clock_anim">Tắt hoạt ảnh chuyển tiếp đồng hồ trong trung tâm thông báo</string>
     <string name="system_ui_statusbar_indicator_battery_title">Về năng lượng</string>
     <string name="system_ui_statusbar_indicator_temperature_title">Về nhiệt độ</string>
@@ -661,6 +668,7 @@ Chức năng này là chức năng thử nghiệm có độ ổn định cao</st
     <string name="quick_settings_state_change_message_off_my">%1$s đang tắt</string>
     <string name="system_control_center_5g_tile">Nút bật 5G nhanh</string>
     <string name="system_control_center_5g_toggle_label">Mạng 5G</string>
+    <string name="system_control_center_reduce_bright_colors_tile">Siêu tối</string>
     <string name="system_control_center_taplus_label">Công tắc Taplus</string>
     <string name="system_control_center_sunshine_mode">Chế độ ngoài trời</string>
     <string name="system_ui_control_auto_close">Tự Động Thu Gọn</string>
@@ -721,6 +729,8 @@ Chức năng này là chức năng thử nghiệm có độ ổn định cao</st
     <string name="system_ui_control_center_more_card_tiles_less">Không</string>
     <string name="system_ui_control_center_more_card_tiles_more">Nhiều hơn</string>
     <string name="system_ui_control_center_more_card_tiles_most">Nhiều nhất</string>
+    <string name="system_ui_control_center_unlock_blur_supported">Xóa hạn chế làm mờ thông báo</string>
+    <string name="system_ui_control_center_unlock_blur_supported_desc">Không có hạn chế về độ mờ nền đối với các vật liệu cao cấp chính thức chỉ dành cho việc xóa chủ đề của bên thứ ba</string>
     <string name="system_ui_other_title">Khác</string>
     <string name="system_ui_charge_animation_title">Hiệu ứng sạc</string>
     <string name="system_ui_charge_animation_style">Hiệu ứng khi sạc</string>
@@ -762,13 +772,22 @@ Chức năng này là chức năng thử nghiệm có độ ổn định cao</st
     <string name="system_settings_enable_fold_area">Mở khoá khu vực điện thoại gập</string>
     <string name="system_settings_enable_area_desc">Các thiết bị không được hỗ trợ sẽ khiến cài đặt bị lỗi sau khi được mở khóa</string>
     <string name="system_settings_unlock_google_header">Tắt các cổng Google ẩn</string>
+    <string name="system_settings_usb_mode">Tắt cửa sổ nổi lên khi kết nối USB</string>
+    <string name="system_settings_usb_mode_choose">Tùy chọn dùng USB mặc định</string>
+    <string name="system_settings_usb_default">mặc định</string>
+    <string name="system_usb_use_charging_only">Chỉ sạc</string>
+    <string name="system_usb_use_file_transfers">Chuyển tập tin</string>
+    <string name="system_usb_use_photo_transfers">Chuyển ảnh</string>
+    <string name="system_usb_use_MIDI">Chế độ MIDI</string>
+    <string name="system_usb_reverse_charge">Sạc ngược</string>
+    <string name="system_usb_tethering">Chia sẻ kết nối qua USB</string>
     <string name="system_settings_connection_sharing_title">Kết nối &amp; Chia sẻ</string>
     <string name="system_settings_new_nfc_page">Trang NFC mới</string>
     <string name="system_settings_new_nfc_page_desc">Sau khi mở, ứng dụng thanh toán mặc định không được hỗ trợ không thể chọn Ví Xiaomi</string>
     <string name="system_settings_lab_title">Tính năng đặc biệt</string>
     <string name="system_settings_area_screenshot">Mở khóa Chụp một phần màn hình</string>
     <string name="system_settings_voip_assistant_controller">Trợ lý VoIP</string>
-    <string name="system_settings_ai_image_title">Công cụ hình ảnh AI</string>
+    <string name="system_settings_display_and_lockscreen_title">Hiển thị &amp; Màn hình khóa</string>
     <string name="system_settings_ai_image_unlock_sr">Mở khoá Siêu phân giải</string>
     <string name="system_settings_ai_image_unlock_ai">Mở khóa Tăng cường hình ảnh AI và Tăng cường HDR AI</string>
     <string name="system_settings_ai_image_unlock_memc">Mở khoá MEMC</string>
@@ -787,6 +806,7 @@ Chức năng này là chức năng thử nghiệm có độ ổn định cao</st
     <string name="system_settings_window_animation_scale">Tỷ lệ ảnh động cửa sổ</string>
     <string name="system_settings_transition_animation_scale">Tỷ lệ ảnh động chuyển tiếp</string>
     <string name="system_settings_animator_duration_scale">Tỷ lệ thời lượng ảnh động</string>
+    <string name="system_settings_allow_never_lock_screen">Cho phép không bao giờ khóa màn hình</string>
     <!--Themes-->
     <string name="theme_manager">Chủ đề</string>
     <string name="theme_manager_version_code_modify">Tắt phát hiện phiên bản MIUI</string>
@@ -866,6 +886,8 @@ Chức năng này là chức năng thử nghiệm có độ ổn định cao</st
     <string name="gallery_enable_video_post">Mở khóa Hiệu ứng video</string>
     <string name="gallery_enable_video_editor">Mở khóa Chỉnh sửa video</string>
     <string name="gallery_enable_text_yanhua">Mở khóa văn bản pháo hoa</string>
+    <string name="gallery_enable_un_privacy_watermark">Xóa giới hạn chữ ở hình mờ cá nhân</string>
+    <string name="gallery_enable_un_privacy_watermark_more">Việc kích hoạt nó sẽ tăng nhẹ mật độ hình mờ để phù hợp với số lượng từ dài hơn</string>
     <string name="gallery_enable_remover_2">Mở khóa Xóa vật thể</string>
     <string name="gallery_enable_magic_matting">Mở khóa Cắt</string>
     <string name="gallery_enable_magic_sky">Mở khóa Bầu trời</string>
@@ -970,6 +992,7 @@ Chức năng này là chức năng thử nghiệm có độ ổn định cao</st
     <string name="home_folder_width_title">Sử dụng chiều rộng của toàn bộ thư mục</string>
     <string name="home_folder_space_title">Giảm lề</string>
     <string name="home_folder_blur_title">Làm mờ nền</string>
+    <string name="home_folder_recommend_apps_switch">Ẩn tùy chọn Đề xuất hôm nay</string>
     <string name="home_folder_unlock_blur_supported">Xóa hạn chế làm mờ thư mục</string>
     <string name="home_folder_unlock_blur_supported_summary">Xóa hạn chế không làm mờ nền vật liệu nâng cao chỉ dành cho chủ đề của bên thứ ba</string>
     <string name="home_folder_anim_title">Hoạt ảnh mở phản hồi</string>
@@ -1055,7 +1078,6 @@ Chức năng này là chức năng thử nghiệm có độ ổn định cao</st
     <string name="home_dock_margin_bottom">Lề của chỉ báo trang từ cuối màn hình</string>
     <string name="home_dock_unlock_hotseat">Mở khóa giới hạn số biểu tượng thanh dock</string>
     <string name="home_dock_fold">Thanh dưới cùng kiểu thu nhỏ</string>
-    <string name="home_dock_hide_seekpoint">Xóa chỉ báo trang</string>
     <string name="home_dock_icon_title">Hiển thị tiêu đề ứng dụng</string>
     <string name="home_dock_disable_recents_icon">Ẩn ứng dụng gần đây khỏi thanh Dock</string>
     <string name="home_dock_add_blur">Tùy chỉnh làm mờ nền</string>
@@ -1082,6 +1104,14 @@ Chức năng này là chức năng thử nghiệm có độ ổn định cao</st
     <string name="home_large_icon_corner_radius">Các biểu tượng lớn với các góc tròn</string>
     <string name="home_other_app_icon_hide">Quản lý phím tắt trên màn hình</string>
     <string name="home_other_toast_slide_again">Cấm thông báo nhắc nhở \"Vui lòng chạm lại\"</string>
+    <string name="home_other_lock_app">Cố định ứng dụng</string>
+    <string name="home_other_lock_app_will_lock">Ứng dụng sẽ bị khóa</string>
+    <string name="home_other_lock_app_lock">Khóa ứng dụng</string>
+    <string name="home_other_lock_app_unlock">Mở khóa ứng dụng</string>
+    <string name="home_other_lock_app_will_unlock">Sẽ khóa ứng dụng</string>
+    <string name="home_other_lock_app_r">Khôi phục</string>
+    <string name="home_other_lock_app_e">Vui lòng mở khóa trong giao diện ứng dụng bị khóa</string>
+    <string name="home_other_lock_app_more">Nhấn và giữ phía dưới màn hình để vào, thoát lại và khởi động lại hệ thống ở lần đầu tiên</string>
     <string name="home_other_shortcut_remove_restrictions">Loại bỏ giới hạn phím tắt</string>
     <string name="home_other_fix_android_r_s">Khắc phục sự cố tương thích khiến màn hình chuyển sang màu đen</string>
     <string name="home_other_shortcut_background_blur_custom">Giá trị làm mờ menu phím tắt</string>
@@ -1172,6 +1202,7 @@ Chức năng này là chức năng thử nghiệm có độ ổn định cao</st
     <!--Security/Tablet security center-->
     <string name="security_center">Bảo mật</string>
     <string name="security_center_pad">Trung tâm bảo mật dạng máy tính bảng</string>
+    <string name="security_center_hyperos">Công cụ bảo mật</string>
     <string name="security_center_app_title">Quản lý ứng dụng</string>
     <string name="security_center_battery_title">Pin và hiệu suất</string>
     <string name="security_center_privacy_title">Bảo vệ riêng tư</string>
@@ -1184,6 +1215,7 @@ Chức năng này là chức năng thử nghiệm có độ ổn định cao</st
     <string name="security_center_blur_location">Độ chính xác định vị thấp hơn</string>
     <string name="security_center_gms_open">Dịch vụ Google</string>
     <string name="security_center_taplus">Công tắc Taplus</string>
+    <string name="security_center_reduce_bright_colors_tile">Thay thế biểu tượng ô rất tối</string>
     <string name="security_center_flash_light">Điều khiển độ sáng đèn pin</string>
     <string name="security_center_flash_light_more">Cho phép bạn điều khiển độ sáng của đèn pin bằng cách kéo thanh trượt độ sáng</string>
     <string name="security_center_get_number">Quản lý ứng dụng truy cập số điện thoại</string>
@@ -1194,6 +1226,7 @@ Chức năng này là chức năng thử nghiệm có độ ổn định cao</st
     <string name="security_center_beauty_privacy">Mở khóa Bảo mật máy ảnh</string>
     <string name="security_center_beauty_pc">Mở khóa Chân dung luôn ở giữa</string>
     <string name="security_center_disable_root_check">Tắt phát hiện rủi ro</string>
+    <string name="security_center_install_intercept">Tắt chặn cài đặt USB</string>
     <string name="security_center_remove_macro_black_list">Xóa danh sách đen combo tự động</string>
     <string name="security_center_disable_send_malicious_app_notification">Tắt thông báo \"Tìm thấy ứng dụng độc hại\"</string>
     <string name="security_center_newbox_custom_enable">Mở tùy chỉnh</string>
@@ -1264,6 +1297,8 @@ Chức năng này là chức năng thử nghiệm có độ ổn định cao</st
     <string name="security_center_sidebar_videobox_title">Hộp công cụ video</string>
     <string name="security_center_sidebar_gamebox_title">Phím tắt trong trò chơi</string>
     <string name="security_center_sidebar_function_title">Chức năng thanh bên</string>
+    <string name="security_center_game_speed">Mở trò chơi nhanh chóng</string>
+    <string name="security_center_game_speed_desc">Khi khởi chạy trò chơi, nó chuyển hoạt ảnh màn hình mở đầu với tốc độ gấp 3 lần, tốc độ này chỉ được hỗ trợ bởi một số trò chơi</string>
     <!--MiTrustService-->
     <string name="trustservice">Dịch vụ MiTrust</string>
     <string name="trustservice_disable_mrm">Tắt phát hiện rủi ro</string>
@@ -1346,7 +1381,7 @@ Chức năng này là chức năng thử nghiệm có độ ổn định cao</st
     <string name="various_open_aosp_something_title">Tính năng ẩn</string>
     <string name="various_open_aosp_something_desc">Mở giao diện AOSP \"tính năng ẩn\"</string>
     <string name="various_nobrightness">Từ chối độ sáng bắt buộc</string>
-    <string name="various_no_overscroll">Disable out-of-bounds bounce</string>
+    <string name="various_no_overscroll">Tắt ranh giới trả lời</string>
     <string name="various_disable_access_device_logs">Bỏ qua thông báo yêu cầu truy cập nhật ký thiết bị</string>
     <string name="various_phrase_clipboardlist">Đã xóa số bảng ghi tạm và giới hạn thời gian</string>
     <string name="various_phrase_clipboardlist_more">Sau khi kích hoạt, chọn phạm vi phương thức nhập và khởi động lại. Việc xóa một nội dung bị vô hiệu hóa</string>

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--Xposed 模块简介-->
     <string name="xposed_description">Make HyperOS/MIUI Great Again!</string>
@@ -80,6 +81,7 @@
     <string name="rest_permission">"现在您必须手动启用此选项的权限。</string>
     <string name="disable_detailed_log">禁用详细日志输出</string>
     <string name="disable_detailed_log_desc">重启以应用更改</string>
+    <string name="disable_detailed_log_more">Debug Canary 版本不支持调整日志级别</string>
     <string name="settings_safe_mode">安全模式</string>
     <string name="settings_safe_mode_desc">停用模块功能</string>
 
@@ -104,9 +106,10 @@
     <string name="tip">提示</string>
     <string name="root">未授予Root/Su权限部分功能不可用</string>
     <string name="hook_failed">模块暂未激活，请检查 Xposed 管理器是否启用，如有请重启或重新优化模块</string>
-    <string name="kill_failed">结束进程失败，请检查是否为 HyperCeiler 授予了 Root/Su 权限?</string>
+    <string name="kill_failed">结束进程失败，请检查是否为 HyperCeiler 授予了 Root/Su 权限</string>
     <string name="pid_failed">目标应用未运行，不需要重启。</string>
-    <string name="reboot_failed">重启失败，请检查是否为 HyperCeiler 授予了 Root/Su 权限?</string>
+    <string name="reboot_failed">重启失败，请检查是否为 HyperCeiler 授予了 Root/Su 权限</string>
+    <string name="start_failed">启动 Activity 失败，请检查是否为 HyperCeiler 授予了 Root/Su 权限</string>
 
     <string name="expand_button_title">高级</string>
     <string name="not_set">未设置</string>
@@ -338,6 +341,7 @@
     <string name="system_ui_display_toast_times_desc">修改 Toast 显示时长，显示时长始终大于 1 秒</string>
 
     <string name="system_framework_phone_network_title">网络设置</string>
+    <string name="phone_additional_network_settings">网络功能辅助菜单</string>
     <string name="phone_double_5g_nr">双卡 5G (SA+NSA)</string>
     <string name="phone_double_5g_nr_desc">双卡同时使用 5G 网络 (卡 2 仅支持 NSA)</string>
     <string name="phone_double_5g_sa">双卡 SA (SA+SA)</string>
@@ -411,6 +415,8 @@
     <string name="browser_debug_mode">解锁开发者选项</string>
     <string name="browser_debug_mode_desc">17.5.xxxxx 及以上版本没有入口</string>
     <string name="browser_disable_blacklist">禁用网址黑名单</string>
+    <string name="browser_enable_debug_environment">启用预发环境</string>
+    <string name="browser_enable_debug_environment_desc">可能导致部分功能失效</string>
     <!--相机-->
     <string name="camera">相机</string>
     <string name="camera_custom_watermark">自定义机型水印</string>
@@ -518,11 +524,13 @@
     <string name="system_ui_lock_screen_unlock_tip_title">隐藏屏幕底部解锁提示</string>
     <string name="system_ui_lock_screen_hide_status_bar">锁屏时隐藏状态栏</string>
     <string name="system_ui_lock_screen_block_editor_title">禁用长按进入锁屏编辑</string>
+    <string name="system_ui_lock_screen_allow_third_face">允许三方锁屏界面唤醒系统验证识别</string>
+    <string name="system_ui_lock_screen_allow_third_face_desc">允许在第三方应用显示的锁屏界面时，正常使用人脸及指纹识别</string>
 
     <string name="system_ui_navigation_title">导航栏</string>
     <string name="system_ui_navigation_handle_title">手势提示线</string>
     <string name="system_ui_hide_navigation_bar">隐藏手势提示线</string>
-    <string name="system_ui_hide_navigation_bar_more">请重启系统桌面和系统界面两个作用域</string>
+    <string name="system_ui_hide_navigation_bar_more">请重启 \"系统桌面\" 和 \"系统界面\" 两个作用域</string>
     <string name="system_ui_navigation_handle_custom">自定义手势提示线</string>
     <string name="system_ui_navigation_handle_custom_height">高度</string>
     <string name="system_ui_navigation_handle_custom_width">竖屏宽度</string>
@@ -658,6 +666,8 @@
     <string name="system_ui_statusbar_clock_double_size">双排时钟大小</string>
     <string name="system_ui_statusbar_clock_double_spacing_desc">仅在双排显示下生效</string>
     <string name="system_ui_disable_clock_anim">禁用通知中心下滑时钟过渡动画</string>
+    <string name="system_ui_statusbar_clock_fix_color">修复时钟反色时颜色异常</string>
+    <string name="system_ui_statusbar_clock_fix_color_desc">实验性功能</string>
 
     <string name="system_ui_statusbar_indicator_battery_title">功耗相关</string>
     <string name="system_ui_statusbar_indicator_temperature_title">温度相关</string>
@@ -708,6 +718,7 @@
     <string name="quick_settings_state_change_message_on_my">%1$s已开启</string>
     <string name="quick_settings_state_change_message_off_my">%1$s已关闭</string>
     <string name="system_control_center_5g_tile">5G 网络开关</string>
+    <string name="system_control_center_reduce_bright_colors_tile">极暗</string>
     <string name="system_control_center_5g_toggle_label">5G网络</string>
     <string name="system_control_center_taplus_label">传送门开关</string>
     <string name="system_control_center_sunshine_mode">阳光模式</string>
@@ -737,13 +748,14 @@
     <string name="system_ui_control_center_compact_notice">紧凑通知</string>
     <string name="system_ui_control_center_compact_notice_desc">减小通知垂直边框</string>
     <string name="system_ui_control_center_redirect_notice">重定向通知设置</string>
-    <string name="system_ui_control_center_redirect_notice_desc">打开通知菜单的设置会导航到目标频道设置而不是应用通知设置</string>
+    <string name="system_ui_control_center_redirect_notice_desc">打开通知菜单的设置会重新跳转到目标应用的通知频道设置，而不是应用通知设置</string>
     <string name="system_ui_control_center_show_weather">显示天气</string>
     <string name="system_ui_control_center_show_weather_city">显示地区</string>
     <string name="system_ui_control_center_mute_visible_notice">亮屏时静音</string>
     <string name="system_ui_control_center_expand_notification">展开通知</string>
     <string name="system_ui_control_center_mute_visible_notice_desc">亮屏时弹出通知不播放提示音</string>
     <string name="system_ui_control_center_rounded_rect">圆角矩形磁贴</string>
+    <string name="system_ui_control_center_statusbar_blur">强制背景模糊</string>
     <string name="system_ui_control_center_rounded_rect_radius">圆角大小</string>
     <string name="system_ui_control_center_fix_tiles_list">补全磁贴列表</string>
     <string name="system_ui_control_center_switch_cc_and_notification_title">对调控制中心与通知抽屉</string>
@@ -756,6 +768,8 @@
     <string name="system_ui_control_center_notifrowmenu_desc">从通知菜单打开应用信息、强制关闭应用和浮窗打开</string>
     <string name="system_ui_unlock_super_volume">解锁超大音量</string>
     <string name="system_ui_unlock_super_volume_desc">实验性功能，实际功能需要底层代码支持</string>
+    <string name="system_ui_control_center_unlock_blur_supported">解除通知背景模糊限制</string>
+    <string name="system_ui_control_center_unlock_blur_supported_desc">仅对三方主题移除没有高级材质背景模糊的限制</string>
 
     <string name="system_ui_controlcenter_new_title">新控制中心</string>
     <string name="system_ui_controlcenter_old_title">经典控制中心</string>
@@ -779,7 +793,7 @@
     <string name="system_ui_another_title">其他</string>
     <string name="system_ui_disable_bluetooth_restrict">禁用蓝牙临时关闭</string>
     <string name="system_ui_disable_miui_multi_win_switch">隐藏快捷窗口按钮</string>
-    <string name="system_ui_disable_miui_multi_win_switch_desc">隐藏 HyperOS for Pad 横屏下顶部居中的快捷窗口按钮 (即常驻的三个小点)</string>
+    <string name="system_ui_disable_miui_multi_win_switch_desc">隐藏 HyperOS 应用窗口顶部居中的快捷窗口按钮 (即常驻的三个小点)</string>
     <string name="system_ui_notification_freeform">更多应用通知栏下拉打开小窗</string>
     <string name="system_ui_others_pct_title">数据显示</string>
     <string name="system_showpct_title">显示亮度百分比</string>
@@ -806,6 +820,15 @@
     <string name="system_settings_enable_fold_area">解锁折叠屏专区</string>
     <string name="system_settings_enable_area_desc">不支持的设备解锁后会导致设置闪退</string>
     <string name="system_settings_unlock_google_header">禁止隐藏 \"Google\" 入口</string>
+    <string name="system_settings_usb_mode">接入 USB 时不弹窗</string>
+    <string name="system_settings_usb_mode_choose">USB 默认选项</string>
+    <string name="system_settings_usb_default">默认</string>
+    <string name="system_usb_use_charging_only">仅限充电</string>
+    <string name="system_usb_use_file_transfers">传输文件</string>
+    <string name="system_usb_use_photo_transfers">传输照片</string>
+    <string name="system_usb_use_MIDI">MIDI 模式</string>
+    <string name="system_usb_reverse_charge">反向充电</string>
+    <string name="system_usb_tethering">USB 网络共享</string>
 
     <string name="system_settings_connection_sharing_title">网络连接与共享</string>
     <string name="system_settings_linkturbo">解除网络加速应用限制</string>
@@ -821,7 +844,8 @@
     <string name="system_settings_area_screenshot">解锁区域截屏</string>
     <string name="system_settings_voip_assistant_controller">解锁网络通话助手</string>
 
-    <string name="system_settings_ai_image_title">AI 大师画质引擎</string>
+    <string name="system_settings_display_and_lockscreen_title">显示与锁屏</string>
+    <string name="system_settings_allow_never_lock_screen">允许永不锁屏</string>
     <string name="system_settings_ai_image_unlock_sr">解锁超分辨率增强</string>
     <string name="system_settings_ai_image_unlock_ai">解锁 AI 智能场景优化与视频画质增强</string>
     <string name="system_settings_ai_image_unlock_memc">解锁动态画面补偿</string>
@@ -836,7 +860,7 @@
 
     <string name="system_settings_develop_title">开发者选项</string>
     <string name="system_settings_apps_freezer">强制显示暂停执行已缓存的应用</string>
-    <string name="system_settings_apps_freezer_more">开启后可在"开发者选项"中找到此功能，为强制显示，不保证可用"</string>
+    <string name="system_settings_apps_freezer_more">开启后可在 \"开发者选项\" 中找到此功能，为强制显示，不保证可用</string>
     <string name="system_settings_develop_speed_mode">极致模式</string>
     <string name="system_settings_develop_speed_mode_desc">在不支持的机型上开启后不会显示入口</string>
     <string name="system_settings_window_animation_scale">窗口动画缩放</string>
@@ -846,7 +870,7 @@
     <string name="theme_manager">主题壁纸</string>
     <string name="theme_manager_version_code_modify">禁用 MIUI 版本检测</string>
     <string name="theme_manager_diable_ads">禁用广告</string>
-    <string name="theme_manager_diable_ads_desc">将 “猜你喜欢” 的广告替换为空白卡片，其余位置的广告将完全移除</string>
+    <string name="theme_manager_diable_ads_desc">将 \"猜你喜欢\" 的广告替换为空白卡片，其余位置的广告将完全移除</string>
     <string name="theme_manager_enable_pad_theme">启用 Pad 主题</string>
     <string name="theme_manager_enable_fold_theme">启用 Fold 主题</string>
     <!--系统更新-->
@@ -917,6 +941,8 @@
     <string name="gallery_enable_video_post">解锁视频特效</string>
     <string name="gallery_enable_video_editor">解锁 Mi 剪辑</string>
     <string name="gallery_enable_text_yanhua">解锁文字烟花</string>
+    <string name="gallery_enable_un_privacy_watermark">解除隐私水印字数限制</string>
+    <string name="gallery_enable_un_privacy_watermark_more">开启会略微增加水印密度，这是为了适应更长的字数</string>
     <string name="gallery_enable_remover_2">解锁魔法消除</string>
     <string name="gallery_enable_magic_matting">解锁魔法抠图</string>
     <string name="gallery_enable_magic_sky">解锁魔法换天</string>
@@ -1086,7 +1112,7 @@
     <string name="home_recent_freeform_background_color">小窗应用卡片背景颜色</string>
     <string name="home_recent_show_real_memory">显示真实使用内存量</string>
     <string name="home_recent_show_memory_info_sum">仅供平板使用</string>
-    <string name="home_recent_show_memory_info">强制展示内存信息</string>
+    <string name="home_recent_show_memory_info">展示内存信息</string>
     <string name="home_recent_always_show_clean_up">无卡片时不隐藏清理图标</string>
     <string name="home_recent_blur">背景模糊</string>
 
@@ -1114,7 +1140,6 @@
     <string name="home_dock_margin_bottom">页面指示器距屏幕底部边距</string>
     <string name="home_dock_unlock_hotseat">解锁底栏图标数量限制</string>
     <string name="home_dock_fold">Fold 样式底栏</string>
-    <string name="home_dock_hide_seekpoint">移除页面指示器</string>
     <string name="home_dock_icon_title">显示应用标题</string>
     <string name="home_dock_disable_recents_icon">隐藏 Dock 栏最近应用的图标</string>
     <string name="home_dock_add_blur">添加 Dock 栏背景模糊</string>
@@ -1142,6 +1167,14 @@
     <string name="home_large_icon_corner_radius">大图标圆角</string>
     <string name="home_other_app_icon_hide">桌面快捷方式管理</string>
     <string name="home_other_toast_slide_again">禁止提示 \"请再划一次\" Toast</string>
+    <string name="home_other_lock_app">固定应用</string>
+    <string name="home_other_lock_app_more">长按屏幕最下方可进入此模式，再次长按即退出，首次使用需重启系统</string>
+    <string name="home_other_lock_app_will_lock">即将锁定当前应用</string>
+    <string name="home_other_lock_app_lock">已锁定当前应用</string>
+    <string name="home_other_lock_app_unlock">已解锁当前应用</string>
+    <string name="home_other_lock_app_will_unlock">即将解锁当前应用</string>
+    <string name="home_other_lock_app_e">请在被锁定应用界面解锁</string>
+    <string name="home_other_lock_app_r">超次还原</string>
     <string name="home_other_shortcut_remove_restrictions">解锁快捷菜单数量限制</string>
     <string name="home_other_fix_android_r_s">修复兼容性问题导致桌面黑屏</string>
     <string name="home_other_shortcut_background_blur_custom">快捷菜单背景透明度</string>
@@ -1226,10 +1259,10 @@
     <string name="screenshot">截屏</string>
     <string name="screenshot_unlock_minimum_crop_limit">解锁最小裁切图片限制</string>
     <string name="screenshot_unlock_privacy_marking_title">解锁智能隐私打码</string>
-    <string name="screenshot_unlock_privacy_marking_desc">需要预装高版本 “MiAI引擎” APP 才能正常使用</string>
+    <string name="screenshot_unlock_privacy_marking_desc">需要预装高版本 \"MiAI引擎\" APP 才能正常使用</string>
     <string name="screenshot_save_to_pictures_desc">规范截屏保存位置到 Pictures/Screenshots</string>
     <string name="screenshot_device_customize_title">自定义带壳截屏机型</string>
-    <string name="screenshot_device_customize_desc">填写请输入 机型代号</string>
+    <string name="screenshot_device_customize_desc">填写请输入 设备代号，有颜色的设备填写应加上后缀，举例：\n- 小米13，填写的内容是 fuxi\n- 小米14 粉色版，填写的内容是 houji_PK</string>
     <!--手机管家/平板管家-->
     <string name="security_center">手机管家</string>
     <string name="security_center_pad">平板管家</string>
@@ -1246,6 +1279,7 @@
     <string name="security_center_blur_location">模糊定位</string>
     <string name="security_center_gms_open">GMS 开关</string>
     <string name="security_center_taplus">传送门开关</string>
+    <string name="security_center_reduce_bright_colors_tile">极暗磁贴图标替换</string>
     <string name="security_center_flash_light">手电筒亮度控制</string>
     <string name="security_center_flash_light_more">开启手电筒时劫持亮度条，拖动亮度条即可控制手电筒亮度</string>
     <string name="security_center_get_number">管理应用获取手机号并一键登录</string>
@@ -1256,6 +1290,7 @@
     <string name="security_center_beauty_privacy">解锁隐私拍摄</string>
     <string name="security_center_beauty_pc">解锁人像居中</string>
     <string name="security_center_disable_root_check">禁用 Root 检测</string>
+    <string name="security_center_install_intercept">禁用 USB 安装拦截</string>
     <string name="security_center_remove_macro_black_list">移除自动连招黑名单</string>
     <string name="security_center_disable_send_malicious_app_notification">禁止发送 “发现恶意应用” 通知</string>
     <string name="security_center_newbox_custom_enable">启用自定义</string>
@@ -1284,7 +1319,7 @@
     <string name="security_center_remove_conversation_bubble_settings_restriction">移除气泡通知应用限制</string>
     <string name="security_center_remove_low_battery_reminder_title">隐藏低电量警告</string>
     <string name="security_center_remove_low_battery_reminder_summary">当电量低于 20% 时，不再弹出打开省电模式的警告对话框</string>
-    <string name="security_center_remove_open_app_confirmation_popup">移除打开应用弹窗</string>
+    <string name="security_center_remove_open_app_confirmation_popup">移除链式启动弹窗</string>
     <string name="security_center_remove_open_app_confirmation_popup_summary">移除 \"XXX 想要打开 XXX\" 的弹窗</string>
     <string name="security_center_no_permission">未取得所需权限</string>
     <string name="security_center_unlock_side_hide_freeform">解锁贴边小窗</string>

@@ -46,8 +46,6 @@ public class SunlightMode extends TileUtils {
     public static final String screenBrightnessMode = "screen_brightness_mode";
     public static final String screenBrightnessCustomMode = "screen_brightness_custom_mode";
     public static final String sunlightMode = "sunlight_mode";
-    String mQSFactoryClsName = isMoreAndroidVersion(Build.VERSION_CODES.TIRAMISU) ? "com.android.systemui.qs.tileimpl.MiuiQSFactory" :
-        "com.android.systemui.qs.tileimpl.QSFactoryImpl";
 
     @Override
     public void init() {
@@ -66,11 +64,6 @@ public class SunlightMode extends TileUtils {
             case 1 -> mMode = false;
             case 2 -> mMode = true;
         }
-    }
-
-    @Override
-    public boolean needCustom() {
-        return true;
     }
 
     public void setPath() {
@@ -106,23 +99,13 @@ public class SunlightMode extends TileUtils {
     }
 
     @Override
-    public Class<?> customQSFactory() {
-        return findClassIfExists(mQSFactoryClsName);
-    }
-
-    @Override
     public Class<?> customClass() {
         return findClassIfExists("com.android.systemui.qs.tiles.PowerSaverTile");
     }
 
     @Override
-    public String[] customTileProvider() {
-        String[] TileProvider = new String[4];
-        TileProvider[0] = isMoreAndroidVersion(Build.VERSION_CODES.TIRAMISU) ? "powerSaverTileProvider" : "mPowerSaverTileProvider";
-        TileProvider[1] = "createTileInternal";
-        TileProvider[2] = "interceptCreateTile";
-        TileProvider[3] = "createTile";
-        return TileProvider;
+    public String setTileProvider() {
+        return isMoreAndroidVersion(Build.VERSION_CODES.TIRAMISU) ? "powerSaverTileProvider" : "mPowerSaverTileProvider";
     }
 
     @Override
@@ -131,7 +114,7 @@ public class SunlightMode extends TileUtils {
     }
 
     @Override
-    public int customValue() {
+    public int customRes() {
         return R.string.system_control_center_sunshine_mode;
     }
 
@@ -147,11 +130,6 @@ public class SunlightMode extends TileUtils {
     @Override
     public void tileLongClickIntent(MethodHookParam param, String tileName) {
         param.setResult(null);
-    }
-
-    @Override
-    public boolean needAfter() {
-        return false;
     }
 
     @Override

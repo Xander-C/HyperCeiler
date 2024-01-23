@@ -9,8 +9,10 @@ import com.sevtinge.hyperceiler.R;
 import com.sevtinge.hyperceiler.ui.base.NavigationActivity;
 import com.sevtinge.hyperceiler.utils.BackupUtils;
 import com.sevtinge.hyperceiler.utils.Helpers;
+import com.sevtinge.hyperceiler.utils.PrefsUtils;
+import com.sevtinge.hyperceiler.utils.PropUtils;
 import com.sevtinge.hyperceiler.utils.SearchHelper;
-import com.sevtinge.hyperceiler.utils.ShellUtils;
+import com.sevtinge.hyperceiler.utils.api.ProjectApi;
 
 import moralnorm.appcompat.app.AlertDialog;
 
@@ -18,10 +20,12 @@ public class MainActivity extends NavigationActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        int def = Integer.parseInt(PrefsUtils.mSharedPreferences.getString("prefs_key_log_level", "2"));
         super.onCreate(savedInstanceState);
         new Thread(() -> SearchHelper.getAllMods(MainActivity.this, savedInstanceState != null)).start();
         Helpers.checkXposedActivateState(this);
-        if (ShellUtils.checkRootPermission() != 0) {
+        if (!PropUtils.setProp("persist.hyperceiler.log.level",
+            (ProjectApi.isRelease() ? def : ProjectApi.isCanary() ? (def == 0 ? 3 : 4) : def))) {
             new AlertDialog.Builder(this)
                 .setCancelable(false)
                 .setTitle(getResources().getString(R.string.tip))

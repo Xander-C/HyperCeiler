@@ -226,6 +226,11 @@
 
         <SwitchPreference
             android:defaultValue="false"
+            android:key="prefs_key_security_center_install_intercept"
+            android:title="@string/security_center_install_intercept" />
+
+        <SwitchPreference
+            android:defaultValue="false"
             android:key="prefs_key_security_center_unlock_fbo"
             android:title="@string/security_center_unlock_fbo" />
 
@@ -251,7 +256,8 @@
             android:defaultValue="false"
             android:key="prefs_key_security_center_game_speed"
             android:summary="@string/security_center_game_speed_desc"
-            android:title="@string/security_center_game_speed" />
+            android:title="@string/security_center_game_speed"
+            app:isPreferenceVisible="false" />
 
     </PreferenceCategory>
     <Preference android:enabled="false" />

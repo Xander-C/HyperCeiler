@@ -1,9 +1,14 @@
 package com.sevtinge.hyperceiler.module.base;
 
+import static com.sevtinge.hyperceiler.utils.Helpers.getPackageVersionCode;
+import static com.sevtinge.hyperceiler.utils.Helpers.getPackageVersionName;
+import static com.sevtinge.hyperceiler.utils.devicesdk.SystemSDKKt.getAndroidVersion;
+import static com.sevtinge.hyperceiler.utils.devicesdk.SystemSDKKt.getHyperOSVersion;
+import static com.sevtinge.hyperceiler.utils.devicesdk.SystemSDKKt.getMiuiVersion;
 import static com.sevtinge.hyperceiler.utils.log.AndroidLogUtils.LogD;
 import static com.sevtinge.hyperceiler.utils.log.LogManager.logLevelDesc;
+import static com.sevtinge.hyperceiler.utils.log.XposedLogUtils.logI;
 
-import com.sevtinge.hyperceiler.BuildConfig;
 import com.sevtinge.hyperceiler.module.app.AiAsst;
 import com.sevtinge.hyperceiler.module.app.Aod;
 import com.sevtinge.hyperceiler.module.app.Backup;
@@ -56,14 +61,15 @@ import com.sevtinge.hyperceiler.module.app.Updater;
 import com.sevtinge.hyperceiler.module.app.Various;
 import com.sevtinge.hyperceiler.module.app.VoiceAssist;
 import com.sevtinge.hyperceiler.module.app.Weather;
-import com.sevtinge.hyperceiler.utils.Helpers;
 import com.sevtinge.hyperceiler.utils.PrefsMap;
 import com.sevtinge.hyperceiler.utils.PrefsUtils;
 import com.sevtinge.hyperceiler.utils.ResourcesHook;
+import com.sevtinge.hyperceiler.utils.api.ProjectApi;
 import com.sevtinge.hyperceiler.utils.log.XposedLogUtils;
 
 import java.io.File;
 import java.util.Map;
+import java.util.Objects;
 
 import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.IXposedHookZygoteInit;
@@ -129,6 +135,7 @@ public abstract class BaseXposedInit implements IXposedHookLoadPackage, IXposedH
     public final Notes mNotes = new Notes();
     public final NetworkBoost networkBoost = new NetworkBoost();
     public final Creation mCreation = new Creation();
+    // public final Demo mDemo = new Demo();
     public final Nfc mNfc = new Nfc();
     public final MiSound mMiSound = new MiSound();
     public final Backup mBackup = new Backup();
@@ -146,7 +153,7 @@ public abstract class BaseXposedInit implements IXposedHookLoadPackage, IXposedH
         if (mPrefsMap.size() == 0) {
             XSharedPreferences mXSharedPreferences;
             try {
-                mXSharedPreferences = new XSharedPreferences(Helpers.mAppModulePkg, PrefsUtils.mPrefsName);
+                mXSharedPreferences = new XSharedPreferences(ProjectApi.mAppModulePkg, PrefsUtils.mPrefsName);
                 mXSharedPreferences.makeWorldReadable();
 
                 Map<String, ?> allPrefs = mXSharedPreferences == null ? null : mXSharedPreferences.getAll();
@@ -174,10 +181,20 @@ public abstract class BaseXposedInit implements IXposedHookLoadPackage, IXposedH
     public void init(LoadPackageParam lpparam) {
         if (isSafeModeOn) return;
         String packageName = lpparam.packageName;
+        if (Objects.equals(packageName, "android"))
+            logI(packageName, "androidVersion = " + getAndroidVersion() + ", miuiVersion = " + getMiuiVersion() + ", hyperosVersion = " + getHyperOSVersion());
+        else
+            logI(packageName, "versionName = " + getPackageVersionName(lpparam) + ", versionCode = " + getPackageVersionCode(lpparam));
         switch (packageName) {
             case "android" -> {
                 mSystemFramework.init(lpparam);
                 mSystemVarious.init(lpparam);
+                // try {
+                //     new CrashHook(lpparam);
+                //     logI(TAG.TAG, "Success Hook Crash");
+                // } catch (Exception e) {
+                //     logE(TAG.TAG, "Hook Crash E: " + e);
+                // }
             }
             case "com.android.systemui" -> {
                 if (isSystemUIModuleEnable()) {
@@ -357,14 +374,17 @@ public abstract class BaseXposedInit implements IXposedHookLoadPackage, IXposedH
                 mTrustService.init(lpparam);
                 mSystemVarious.init(lpparam);
             }
+            // case "com.hchen.demo" -> {
+            //     mDemo.init(lpparam);
+            // }
             case "com.xiaomi.NetworkBoost" -> networkBoost.init(lpparam);
-            case BuildConfig.APPLICATION_ID -> ModuleActiveHook(lpparam);
+            case ProjectApi.mAppModulePkg -> ModuleActiveHook(lpparam);
             default -> mVarious.init(lpparam);
         }
     }
 
     public void ModuleActiveHook(LoadPackageParam lpparam) {
-        Class<?> mHelpers = XposedHelpers.findClassIfExists(Helpers.mAppModulePkg + ".utils.Helpers", lpparam.classLoader);
+        Class<?> mHelpers = XposedHelpers.findClassIfExists(ProjectApi.mAppModulePkg + ".utils.Helpers", lpparam.classLoader);
 
         XposedHelpers.setStaticBooleanField(mHelpers, "isModuleActive", true);
         XposedHelpers.setStaticIntField(mHelpers, "XposedVersion", XposedBridge.getXposedVersion());

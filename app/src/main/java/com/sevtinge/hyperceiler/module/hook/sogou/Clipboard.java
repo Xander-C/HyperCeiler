@@ -21,7 +21,7 @@ public class Clipboard extends BaseHook {
 
     @Override
     public void init() {
-        DexKit.INSTANCE.initDexKit(lpparam);
+        // DexKit.INSTANCE.initDexKit(lpparam);
         MethodData methodData = DexKit.INSTANCE.getDexKitBridge().findMethod(
             FindMethod.create()
                 .matcher(MethodMatcher.create()
@@ -29,7 +29,7 @@ public class Clipboard extends BaseHook {
                         .usingStrings("sogou_clipboard_tmp"))
                     .usingNumbers("com.sohu.inputmethod.sogou.xiaomi".equals(lpparam.packageName) ? 150 : 80064)
                 )
-        ).firstOrThrow(() -> new IllegalStateException("Clipboard: No class found MethodData"));
+        ).singleOrThrow(() -> new IllegalStateException("Clipboard: No class found MethodData"));
 
         // logE("find class: " + lpparam.packageName);
 
@@ -72,6 +72,6 @@ public class Clipboard extends BaseHook {
                 }
             }
         );
-        DexKit.INSTANCE.closeDexKit();
+        // DexKit.INSTANCE.closeDexKit();
     }
 }
